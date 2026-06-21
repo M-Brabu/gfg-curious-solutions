@@ -1,0 +1,39 @@
+1)Odd or Even :
+
+last bit of all odd numbers is always 1, while for even numbers it’s 0. So, when performing bitwise AND operation with 1, odd numbers give 1, and even numbers give 0.
+
+class GfG {
+    public static boolean isEven(int n)
+    {
+        // taking bitwise and of n with 1 
+        if ((n & 1) == 0)
+            return true;
+        else
+            return false;
+    }
+    
+    public static void main(String[] args)
+    {
+        int n = 15;
+        if (isEven(n) == true)
+            System.out.print("true");
+        else
+            System.out.print("false");
+    }
+}
+
+-------------------------------------------------------------------------------------------------------
+2)First and last digit of number
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int n = 34356;
+        String s = Integer.toString(n);
+        int first_digit = s.charAt(0) - '0';
+        int last_digit = s.charAt(s.length() - 1) - '0';
+        System.out.println("First digit of " + n + " is " + first_digit);
+        System.out.println("Last digit of " + n + " is " + last_digit);
+    }
+}
