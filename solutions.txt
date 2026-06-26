@@ -72,6 +72,7 @@ for (int i = 0; i < arr.length - 1; i++) {
 }
 -------------------------------------------------------------------------------------------------------
 5) third largest number in array : (without repeatation) eg:3,4,7,5   ans: 4 , 3,4,5,5 ans:3
+
 class Solution {
     public int thirdLargest(List<Integer> arr) {
         Integer first = null;
@@ -100,3 +101,33 @@ class Solution {
     return third;    
     }
 }
+
+with repetation allowed : eg : 5,5,5  ans: 5
+
+class Solution {
+    public int thirdLargest(List<Integer> arr) {
+        Integer first = null;
+        Integer second = null;
+        Integer third = null;
+        
+        if(arr.size()<3){
+            return -1;
+        }
+        for(Integer num : arr){
+            if(first ==null|| num > first){
+                third=second;
+                second=first;    
+                first=num;        
+            }
+            else if(second ==null ||num > second){
+                third =second;
+                second = num;
+            }
+            else if(third == null || num > third){
+                third = num;
+            }
+        }
+    return third;    
+    }
+}
+------------------------------------------------------------------------------------------------------
