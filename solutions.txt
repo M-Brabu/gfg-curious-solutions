@@ -205,3 +205,27 @@ right rotation :                 [1,2,3,4,5] k =2   1)[5,4,3,2,1]  2)[4,5,3,2,1]
  reverse(arr, k, n - 1);
  reverse(arr, 0, n - 1);
  reverse(arr, 0, k - 1);
+------------------------------------------------------------------------------------------------------------------------------------
+9)Array subset e.g: a=[1,2,3,4,5] b=[3,4] b is sub set of a ; a=[1,2,3,3] b=[1,2,3] b is not subset of a because a has 2 occurence of 3 but b has 1
+
+
+import java.util.HashMap;
+class Solution {
+    public boolean isSubset(int a[], int b[]) {
+        // Your code here
+        HashMap <Integer,Integer> map = new HashMap<>();
+        //frequency of numbers in array
+        for(int num : a){
+            map.put(num,map.getOrDefault(num,0)+1);
+        }
+        for(int subnum :b){
+            if(!map.containsKey(subnum) || map.get(subnum) == 0){
+                return false;
+            }
+            map.put(subnum,map.get(subnum)-1);
+        }
+        return true;
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+10)
