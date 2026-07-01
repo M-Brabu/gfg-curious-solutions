@@ -227,27 +227,28 @@ class Solution {
         return true;
     }
 }
---------------------------------------------------------------------------------------------------------------------------------------
-10)inverted triange:
-****
-***
-**
-*
-class Main {
-    public static void main(String[] args) {
-        int n=5;
-        for(int i=1;i<n;i++){                             
-            for(int j=i;j<n;j++){
-            System.out.print("*");
-            }
-            System.out.println("");
-        }
+
+----------------------------------------------------------------------------------------------------------
+10) check if arrays are equal [1,2,2,3]==[3,1,2,2]  , [1,2,2]!=[1,2]
+
+class Solution {
+    public static boolean checkEqual(int[] a, int[] b) {
+     if(a.length != b.length){
+         return false;
+     }
+     HashMap <Integer,Integer> map = new HashMap <>();
+     for(int Anum : a){
+        map.put(Anum,map.getOrDefault(Anum,0)+1);
+     }
+     for(int Bnum :b){
+         if(map.containsKey(Bnum)==false){
+             return false;
+         }
+         map.put(Bnum,map.get(Bnum)-1);
+         if(map.get(Bnum)==0){
+             map.remove(Bnum);
+         }
+    }
+    return map.isEmpty();
     }
 }
-------------------------------------------------------------------------------------------------------------------------------------
-11)rectangle pattern:
-****
-****
-****
-for(int i=1;i<n;i++){
-for(int j=1;j<n;j++){
