@@ -252,3 +252,16 @@ class Solution {
     return map.isEmpty();
     }
 }
+---------------------------------------------------------------------------------------------------------------------------------
+11) Check if array is sorted [1,2,3,4,5] true  , [2,5,3,1,3] false   (striver)
+class Solution {
+    public boolean isSorted(ArrayList<Integer> nums) {
+                for(int i=nums.size()-1;i>0;i--){
+                    if(nums.get(i)>nums.get(i-1)){
+                          continue;
+                    }
+                    return false;
+                }
+                return true;
+    }
+}
