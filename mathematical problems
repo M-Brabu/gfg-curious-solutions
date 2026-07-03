@@ -63,3 +63,46 @@ class Solution {
           return rev;
     }
 }
+------------------------------------------------------------------------------------------------------------------------------------------
+5)palindrome : e.g :121 ->  121 true , 123 -> 321 false , 12321 -> 12321 true , 0 -> 0 true 
+brute force  may cause overflow for large number :
+class Solution {
+    public boolean isPalindrome(int n) {
+        if(n<0 || n!=0 && n%10 == 0){
+            return false;
+        }
+      int xerox = n;
+      int rev = 0; 
+      while(n>0){
+        rev = rev *10 + n % 10;
+        n = n / 10;
+      }
+      if(xerox == rev){
+        return true;
+      }
+      else{
+        return false;
+      }
+    }
+}
+opimal : half reverse avoids overflow ,  idea :even: 1221 =12|21 rev the second half 12|12 12 = 12 (first half = second half) true 
+odd : 12321 -> 12|3|21 -> 12|3|12 ->12|123 -> 12 == 123%10 then 12 == 12 true
+class Solution {
+    public boolean isPalindrome(int n) {
+        // Negative numbers are not palindromes.
+        // Numbers ending with 0 (except 0 itself) cannot be palindromes.
+        if (n < 0 || (n % 10 == 0 && n != 0)) {
+            return false;
+        }
+        int rev = 0;
+        // Reverse only half of the number
+        while (n > rev) {
+            rev = rev * 10 + (n % 10);
+            n /= 10;
+        }
+        // Even digits: n == rev
+       // Odd digits: ignore the middle digit by rev / 10
+        return n == rev || n == rev / 10;
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------------
