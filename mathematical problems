@@ -51,3 +51,15 @@ class Solution {
     }
 }
 --------------------------------------------------------------------------------------------------------------------------------------------
+4)reverse a number : eg:123 -> 321  , 0 -> 0 , 1204 ->4021    striver
+class Solution {
+    public int reverseNumber(int n) {
+          int rev=0;
+          while(n>0){
+            rev=rev*10;
+            rev=rev+(n%10);
+            n=n/10;
+          }
+          return rev;
+    }
+}
