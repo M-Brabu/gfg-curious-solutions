@@ -1,44 +1,6 @@
-1)Odd or Even :
 
-last bit of all odd numbers is always 1, while for even numbers it’s 0. So, when performing bitwise AND operation with 1, odd numbers give 1, and even numbers give 0.
-
-class GfG {
-    public static boolean isEven(int n)
-    {
-        // taking bitwise and of n with 1 
-        if ((n & 1) == 0)
-            return true;
-        else
-            return false;
-    }
-    
-    public static void main(String[] args)
-    {
-        int n = 15;
-        if (isEven(n) == true)
-            System.out.print("true");
-        else
-            System.out.print("false");
-    }
-}
-
--------------------------------------------------------------------------------------------------------
-2)First and last digit of number:
-
-import java.util.*;
-
-public class Main {
-    public static void main(String[] args) {
-        int n = 34356;
-        String s = Integer.toString(n);
-        int first_digit = s.charAt(0) - '0';
-        int last_digit = s.charAt(s.length() - 1) - '0';
-        System.out.println("First digit of " + n + " is " + first_digit);
-        System.out.println("Last digit of " + n + " is " + last_digit);
-    }
-}
 ----------------------------------------------------------------------------------------------------------
-3)max and min in array:
+1)max and min in array:
 
 class Solution {
     public ArrayList<Integer> getMinMax(int[] arr) {
@@ -59,7 +21,7 @@ class Solution {
     }
 }
 ------------------------------------------------------------------------------------------------------
-4)sorting array (genric way):
+2)sorting array (genric way):
 
 for (int i = 0; i < arr.length - 1; i++) {
     for (int j = i + 1; j < arr.length; j++) {
@@ -71,7 +33,7 @@ for (int i = 0; i < arr.length - 1; i++) {
     }
 }
 -------------------------------------------------------------------------------------------------------
-5) third largest number in array : (without repeatation) eg:3,4,7,5   ans: 4 , 3,4,5,5 ans:3
+3) third largest number in array : (without repeatation) eg:3,4,7,5   ans: 4 , 3,4,5,5 ans:3
 
 class Solution {
     public int thirdLargest(List<Integer> arr) {
@@ -131,7 +93,7 @@ class Solution {
     }
 }
 ------------------------------------------------------------------------------------------------------
-6)finding missing number in array :
+4)finding missing number in array :
 Examples:
 Input: arr[] = [1, 2, 3, 5]
 Output: 4
@@ -157,7 +119,7 @@ class Solution {
     }
 }
 ---------------------------------------------------------------------------------------------------------
-7)rotate array by 1 time :   (shifting method)
+5)rotate array by 1 time :   (shifting method)
 input : [1,2,3,4,5] 
 output : [5,1,2,3,4]
 T.C : O(n)
@@ -175,7 +137,7 @@ class Solution {
 }
 
 ------------------------------------------------------------------------------------------------------------
-8) rotate array by k : (reveral algorithm)  
+6) rotate array by k : (reveral algorithm)  
 
 left rotation:                   [1,2,3,4,5] k =2   1)[2,1,3,4,5]  2)[2,1,5,4,3] 3)[3,4,5,1,2]
 --------------
@@ -206,7 +168,7 @@ right rotation :                 [1,2,3,4,5] k =2   1)[5,4,3,2,1]  2)[4,5,3,2,1]
  reverse(arr, 0, n - 1);
  reverse(arr, 0, k - 1);
 ------------------------------------------------------------------------------------------------------------------------------------
-9)Array subset e.g: a=[1,2,3,4,5] b=[3,4] b is sub set of a ; a=[1,2,3,3] b=[1,2,3] b is not subset of a because a has 2 occurence of 3 but b has 1
+7)Array subset e.g: a=[1,2,3,4,5] b=[3,4] b is sub set of a ; a=[1,2,3,3] b=[1,2,3] b is not subset of a because a has 2 occurence of 3 but b has 1
 
 
 import java.util.HashMap;
@@ -229,7 +191,7 @@ class Solution {
 }
 
 ----------------------------------------------------------------------------------------------------------
-10) check if arrays are equal [1,2,2,3]==[3,1,2,2]  , [1,2,2]!=[1,2]
+8) check if arrays are equal [1,2,2,3]==[3,1,2,2]  , [1,2,2]!=[1,2]
 
 class Solution {
     public static boolean checkEqual(int[] a, int[] b) {
@@ -253,7 +215,7 @@ class Solution {
     }
 }
 ---------------------------------------------------------------------------------------------------------------------------------
-11) Check if array is sorted [1,2,3,4,5] true  , [2,5,3,1,3] false   (striver)
+9) Check if array is sorted [1,2,3,4,5] true  , [2,5,3,1,3] false   (striver)
 class Solution {
     public boolean isSorted(ArrayList<Integer> nums) {
                 for(int i=nums.size()-1;i>0;i--){
