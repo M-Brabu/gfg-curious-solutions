@@ -189,3 +189,19 @@ class Solution {
 }
 Time Complexity: O(n), Space Complexity: O(k) (where k is the number of divisors).
 ---------------------------------------------------------------------------------------------
+9)prime :
+bruteforce:
+class Solution {
+    public boolean isPrime(int n) {
+        if(n==0 || n==1){
+            return false;
+        }
+         for(int i=2;i<=(n/2);i++){
+            if(n%i==0){
+                return false;
+            }
+         }
+         return true;
+    }
+}
+optimal : in loop use i*i<=n   reason i ≤ √n then squaring both sides gives: i² ≤ n insteed Math.sqrt(n);
