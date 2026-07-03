@@ -1,1 +1,12 @@
-
+count digit in number : eg n=4  return 1 , n=144 return 3    striver
+class Solution {
+    public int countDigit(int n) {
+          int count =0 ;
+          while(n>0){
+            n=n/10;
+            count++;
+          }
+          return count++;
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------------
