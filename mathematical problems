@@ -106,7 +106,8 @@ class Solution {
     }
 }
 ----------------------------------------------------------------------------------------------------------------------------------------
-6)GCD Brute force :
+6)GCD :
+Brute force :
 class Solution {
     public int GCD(int n1, int n2) {
          int min = n1<=n2 ? n1 : n2;
@@ -119,3 +120,17 @@ class Solution {
          return gcd;
     }
 }
+optimal use euclidean algorithm : gcd(a,b) = (b,a%b):
+class Solution {
+    public int GCD(int n1, int n2) {
+        while(n2!=0){
+            int rem =  n1 % n2;
+            n1=n2;
+            n2=rem;
+        }
+        return n1;
+    }
+}       brute           euclidean
+Time	O(min(n1,n2))	O(log(min(n1,n2))) 
+Space	O(1)	        O(1)
+-------------------------------------------------------------------------------------------------------------------------------------------
