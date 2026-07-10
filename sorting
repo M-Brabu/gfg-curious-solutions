@@ -49,4 +49,55 @@ Pass 4
 Minimum = 25
 No swap needed
 [11, 12, 22, 25, 64]
-------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------
+2) Bubble Sort :
+class Solution {
+    public int[] bubbleSort(int[] nums) {
+         int n = nums.length;
+         for(int i = 0 ; i < n-1 ;i++){
+            boolean swapped = false;
+            for(int j=0 ; j < n-1-i;j++){
+               if(nums[j]>nums[j+1]){
+                int temp = nums[j+1];
+                nums[j+1]=nums[j];
+                nums[j]=temp;
+                swapped=true;
+               }
+            }
+            if(!swapped){
+                break;
+            }
+         }
+        return nums;
+    }
+}
+Time Complexity
+Best Case: O(n) → Array is already sorted, so only one pass is needed.
+Average Case: O(n²) → Multiple passes and comparisons are required.
+Worst Case: O(n²) → Reverse sorted array; maximum comparisons and swaps.
+Space Complexity
+O(1) → Uses only a few extra variables (temp, swapped, i, j).
+
+working:
+Array: 5 1 4 2 8
+Pass 1 (i = 0)
+5 1 → Swap → 1 5 4 2 8
+5 4 → Swap → 1 4 5 2 8
+5 2 → Swap → 1 4 2 5 8
+5 8 → No Swap
+
+Result: 1 4 2 5 8
+Largest element (8) is fixed.
+Pass 2 (i = 1)
+1 4 → No Swap
+4 2 → Swap → 1 2 4 5 8
+4 5 → No Swap
+
+Result: 1 2 4 5 8
+Second largest element (5) is fixed.
+Pass 3 (i = 2)
+1 2 → No Swap
+2 4 → No Swap
+
+Result: 1 2 4 5 8
+No swaps → Stop.
