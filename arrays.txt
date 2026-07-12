@@ -273,3 +273,34 @@ Reason: j traverses the array only once.
 Space Complexity
 O(1)
 Reason: Only two pointers (i, j) are used; no extra array is created
+---------------------------------------------------------------------------------------------------------------------------------
+11)move zeros to end of the array : (Brute force striver)
+
+Input: nums = [0, 1, 4, 0, 5, 2]
+Output: [1, 4, 5, 2, 0, 0]
+Explanation:  Both the zeroes are moved to the end and the order of the other elements stay the same
+class Solution {
+    public void moveZeroes(int[] nums) {
+        int n = nums.length;
+        int zeroCount=0;
+        ArrayList <Integer> dup =  new ArrayList<>(); 
+        for(int i=0;i<n;i++){
+            if(nums[i]!=0){
+            dup.add(nums[i]);
+            }
+            else{
+               zeroCount++;
+            }
+        }
+        for(int j=0;j<dup.size();j++){
+            nums[j]=dup.get(j);
+        }
+        int m = dup.size();
+        while(zeroCount>0){
+            nums[m]=0;
+            zeroCount--;
+            m++;
+        }
+    }
+}
+T.C O(n), s.c O(n)
