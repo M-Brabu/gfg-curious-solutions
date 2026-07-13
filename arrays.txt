@@ -342,3 +342,27 @@ class Solution {
 }
 }
 t.c: O(n) , s.c : O(1)
+
+----------------------------------------------------------------------------------------------------------------------------------------
+13)Two sum Brute force : returning indices eg: [1,2,3,4] target=7 =>nums[2]+nums[3]=3+4=7 hence return arr = [2,3] 
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int n = nums.length;
+        int arr [] = new int[2];
+         for(int i=0;i<n;i++){
+            for(int j=i+1;j<n;j++){
+                if(i==j){
+                    continue;
+                }
+                if(nums[i]+nums[j]==target){
+ 
+                    arr[0]=i;
+                    arr[1]=j;
+                }
+            }
+       
+         }
+              return arr;        
+    }
+}
+T.c : o(n^2)   , s.c : o(1)  
