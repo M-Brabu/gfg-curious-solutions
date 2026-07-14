@@ -1,0 +1,17 @@
+1)    single element : e.g : [1,1,2,2,3,4,4,5,5]  ans: 3 because 3 appears once
+class Solution {
+    public int singleNumber(int[] nums) {
+
+        // Start with 0
+        int ans = 0;
+
+        // XOR every element with ans
+        for (int num : nums) {
+            ans = ans ^ num;
+        }
+
+        // After all duplicate numbers cancel each other,
+        // only the single number remains.
+        return ans;
+    }
+}
