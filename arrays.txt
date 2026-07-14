@@ -366,3 +366,26 @@ class Solution {
     }
 }
 T.c : o(n^2)   , s.c : o(1)  
+----------------------------------------------------------------------------------------------------------------------------------------
+14)Majority Element e.g :[1,2,2,1,1,3,4,5]  majority element : 1 because 1 appaear 3 times :
+
+Brute force:
+import java.util.HashMap;
+class Solution {
+    public int majorityElement(int[] nums) {
+        HashMap <Integer,Integer> map = new HashMap<>();
+        for(int n : nums){
+            map.put(n,map.getOrDefault(n,0)+1);
+        } 
+        int max = 0;
+        int ans = 0;
+        for(HashMap.Entry <Integer,Integer> entry : map.entrySet()){
+            if(entry.getValue()>max){
+                max = entry.getValue();
+                ans = entry.getKey();
+            }
+        }
+        return ans;
+    }
+}
+T.c : o(n) ,s.c :o(n)
