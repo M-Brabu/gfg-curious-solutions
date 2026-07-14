@@ -388,3 +388,21 @@ class Solution {
     }
 }
 T.c : o(n) ,s.c :o(n)
+---------------------------------------------------------------------------------------------------------------------------------------
+15)Single element e.g :[1,1,2,2,3,4,4,5,5]   ans : 3 becase all other elements in array appears twice except 3 so 3 is single element:
+Brute Force
+class Solution {
+    public int singleNumber(int[] nums) {
+        HashMap <Integer,Integer>  map = new HashMap<>();
+        for(int n : nums){
+            map.put(n,map.getOrDefault(n,0)+1);
+        }
+        for(HashMap.Entry <Integer,Integer> entry : map.entrySet()){
+            if(entry.getValue()==1){
+                return entry.getKey();
+            }
+        }
+        return -1;
+    }
+
+t.c : O(n), s.c : O(n)
