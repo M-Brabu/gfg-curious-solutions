@@ -406,3 +406,24 @@ class Solution {
     }
 
 t.c : O(n), s.c : O(n)
+--------------------------------------------------------------------------------------------------------------------------------------
+16)longest sub array with sum k ----e.g : [1,2,1,1,1,3] if k=3   then [1,1,1] is longest sub array with sum == k  second largest [1,2]
+Brute :
+class Solution {
+    public int longestSubarray(int[] nums, int k) {
+
+      int len = 0;
+      int n = nums.length;      
+      for(int i=0;i<n;i++){
+        int sum = 0; 
+        for(int j=i;j<n;j++){
+            sum = sum + nums[j];
+            if(k == sum){
+                 len = j-i+1 >len ? j-i+1: len;
+            }
+        }
+      }
+      return len;  
+    }
+}
+t.c O(n^2) , O(1)
