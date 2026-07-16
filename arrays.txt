@@ -427,3 +427,38 @@ class Solution {
     }
 }
 t.c O(n^2) , O(1)
+---------------------------------------------------------------------------------------------------------------------------------------
+17)sort 0s 1s 2s : sort colors : medium
+brute force :
+        int n=  nums.length;
+        int count0 = 0;
+        int count1 = 0;
+        int count2 = 0;
+        for(int i=0 ; i<n ; i++ ){
+           if(nums[i]==0){
+            count0++;
+           }
+           else if(nums[i]==1){
+            count1++;
+           }
+           else{
+            count2++;
+           }
+        }
+        int j;
+        for(j=0; j<count0;j++){
+             nums[j]=0;
+        }              
+        for(j=count0 ; j<count0+count1 ;j++ ){
+            nums[j]=1;
+        }
+        for(j=count0+count1;j<n;j++){
+            nums[j]=2;
+        } 
+Approach   Time	   Space   Passes
+Counting 	O(n)	O(1)	2
+
+optimal:
+Dutch National Flag:
+
+    
