@@ -490,3 +490,31 @@ class Solution {
 }
     
 T.C:O(n) , S.C:O(1)    passes : 1 
+--------------------------------------------------------------------------------------------------------------------------------------
+18) Maximum sub array sum:   e.g : [1,-2,3,4]    subarray : [3,4] = 7 is maximum sub array others [1] = 1 [1,-2]=-1 ,[1,-2,3]=2 ,[1,-2,3,4] = 6 
+[-2,3] = 1,[-2,3,4]=5,[3,4]=7,[4]=4 
+brute:
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int n = nums.length;
+        int sum = 0;
+        int max = -99999;
+        for(int i=0;i<n;i++){
+            sum = 0;
+            for(int j=i;j<n;j++){
+                sum = sum + nums[j];
+                if(max<sum){
+                    max=sum;
+                }
+            }
+        }
+          return max;
+    }
+}
+t.c : O(n^2)  , s.c : O(1)
+
+optimal:
+Kadane's:
+
+
+t.c: O(n)  ,s.c : O(1)
