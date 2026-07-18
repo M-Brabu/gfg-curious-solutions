@@ -514,7 +514,17 @@ class Solution {
 t.c : O(n^2)  , s.c : O(1)
 
 optimal:
-Kadane's:
-
-
+Kadane's:        e.g : [1,-2,3,4]  curentsum = 1 -> -1 -> reset to 0 coz curent sum goes to -ve -> 3 -> 7 so [3,4] = 7
+         for(int num : nums){
+            currentSum += num;
+            // Update maximum sum if current sum is larger
+            if (currentSum > maxSum) {
+                maxSum = currentSum;
+            }
+            // If current sum becomes negative,
+            // discard it and start a new subarray
+            if (currentSum < 0) {
+                currentSum = 0;
+            }
+        }
 t.c: O(n)  ,s.c : O(1)
