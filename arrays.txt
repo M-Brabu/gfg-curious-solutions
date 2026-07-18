@@ -528,3 +528,32 @@ Kadane's:        e.g : [1,-2,3,4]  curentsum = 1 -> -1 -> reset to 0 coz curent 
             }
         }
 t.c: O(n)  ,s.c : O(1)
+----------------------------------------------------------------------------------------------------------------------------------------
+19) Best Time to Buy and Sell Stock :
+class Solution {
+    public int maxProfit(int[] prices) {
+     int maxProfit = 0;
+     int buy = Integer.MAX_VALUE;
+     for(int i=0;i<prices.length;i++){
+        if(prices[i]<buy){
+            buy=prices[i];
+        }
+        else{
+            int current_profit = prices[i]-buy;
+            if(current_profit>maxProfit){
+                maxProfit = current_profit;
+            }
+        }
+     }
+    return maxProfit;    
+    }
+}
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+
+Input: prices = [7,1,5,3,6,4]
+Output: 5
+Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
+
