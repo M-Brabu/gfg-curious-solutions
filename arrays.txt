@@ -635,3 +635,33 @@ class Solution {
 Time: O(n)
 Space: O(n)
 number of pass : 1
+----------------------------------------------------------------------------------------------------------
+22)leaders in array :
+e.g : [5,2,1,7,6,3]  ans:[7,6,3] coz 7 left side has 6,3 smaller than 7. 6 has 3 which is smaller than 6 3 coz no elements rigth to 3 . [5] is not coz 7,6 is greated than 5.
+brute :
+class Solution {
+    public List<Integer> leaders(int[] nums) {
+       ArrayList <Integer> arr = new ArrayList<>();
+       int n = nums.length;
+       for(int i=0;i<n;i++){
+        boolean leader = true;
+        for(int j=i+1;j<n;j++){
+            if(nums[i]>nums[j]){
+                   continue;
+            }
+            else{
+                 leader=false;
+                 break;
+            }        
+        }
+        if(leader == true){
+            arr.add(nums[i]);
+        }
+       }
+       return arr;   
+    }
+}
+T.C : O(n^2) , S.C : O(1)
+optimal :
+
+T.C : O(n) , S.C : O(1)
