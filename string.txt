@@ -132,3 +132,25 @@ class Solution {
 }
 t.c : O(n) , s.c : O(n)
 -----------------------------------------------------------------------------------------------------------------------------------
+6)Reverse every word in string 
+e.g : str="the sky is blue" - > "blue is sky the"
+brute :
+class Solution {
+    public String reverseWords(String s) {
+     String [] arr = s.trim().split("\\s+");    -> String s = "the    sky";
+String[] arr = s.split(" ");                       Result:"the", "", "", "", "sky"]
+                                                   The empty strings ("") are created because split(" ") splits only on a single space.                                                    so use \\s to avoid such in between spaces + one or more spaces  
+int start = 0;
+    int end = arr.length-1;
+     while(start<end){
+        String temp = arr[start];
+        arr[start] = arr[end] ;
+        arr[end] = temp; 
+        start++;
+        end--;
+     }  
+     String snew = String.join(" ",arr);
+     return snew;
+    }
+}
+t.c : O(n) , s.c : O(n)
