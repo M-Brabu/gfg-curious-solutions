@@ -154,3 +154,25 @@ int start = 0;
     }
 }
 t.c : O(n) , s.c : O(n)
+--------------------------------------------------------------------------------------------------------------------------------------
+7) Longest common prefix : e.g :[flower,flow,flight]  fl is common prefix in the array  , [dog,cat,rat] "" coz no common prefix
+better :
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        Arrays.sort(strs);
+        int index = 0;
+        String s1 = strs[0];
+        String s2 = strs[strs.length-1];
+        while(index<s1.length() && index<s2.length()){
+            if(s1.charAt(index) == s2.charAt(index)){
+                index++;
+            }
+            else{
+                break;
+            }
+        }
+        return index == 0 ? "" : s1.substring(0,index); 
+    }
+}
+t.c : O(n lon n x m) , s.c : O(n)
+------------------------------------------------------------------------------------------------------------------------------------
