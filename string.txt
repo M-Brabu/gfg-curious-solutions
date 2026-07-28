@@ -176,3 +176,13 @@ class Solution {
 }
 t.c : O(n lon n x m) , s.c : O(n)
 ------------------------------------------------------------------------------------------------------------------------------------
+8)length of last word : 
+e.g: " fly  me to     the moon " -> moon = 4
+brute :
+class Solution {
+    public int lengthOfLastWord(String s) {
+        String arr [] = s.trim().split("\\s+");
+        return arr[arr.length-1].length();
+    }
+}
+t.c : O(n) , s.c : O(n)
