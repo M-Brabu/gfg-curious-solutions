@@ -217,3 +217,26 @@ class Solution {
 }
 t.c : O(n) , s.c : O(1)
 ---------------------------------------------------------------------------------------------------------------------------------------
+10)FiZZ Buzz : i div by 3 & 5 fizzbuzz , i div by 3 fizz , i div by fizz : e.g : n = 5 =>["1","2","Fizz","4","buzz"]
+class Solution {
+    public List<String> fizzBuzz(int n) {
+        ArrayList <String> answer  = new  ArrayList<>();
+        for(int i=1;i<=n;i++){
+            if(i%3==0 && i%5==0){
+               answer.add("FizzBuzz");
+            }
+            else if(i%3==0){
+                answer.add("Fizz");
+            }
+            else if(i%5==0){
+                answer.add("Buzz");
+            }
+            else{
+                String ii = Integer.toString(i);
+                answer.add(ii);
+            }
+        }
+        return answer;
+    }
+}
+t.c : O(n) , s.c : O(n)
