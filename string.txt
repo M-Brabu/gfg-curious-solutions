@@ -240,3 +240,33 @@ class Solution {
     }
 }
 t.c : O(n) , s.c : O(n)
+----------------------------------------------------------------------------------------------------------------------------------------
+11)jewels and stones :
+jewels = "aAB" stones="a,b,c,d"     in stones only one jewel (a) is present 
+brute:
+class Solution {
+    public int numJewelsInStones(String jewels, String stones) {
+        ArrayList <Character> jj = new ArrayList<>();
+        ArrayList <Character> ss = new ArrayList<>();
+        for(int j=0;j<jewels.length();j++){
+            jj.add(jewels.charAt(j));
+        }
+        for(int s=0;s<stones.length();s++){
+            ss.add(stones.charAt(s));
+        }
+        int count=0;
+        for(int jew = 0 ;jew<jj.size();jew++){
+            for(int ston = 0; ston<ss.size();ston++){
+                         if(jj.get(jew) == ss.get(ston)){
+                                     count=count+1;
+                         }
+            }
+        }
+        return count;
+    }
+}
+t.c : O(j * s) , s.c : O(j + s) 
+optimal :
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
