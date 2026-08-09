@@ -744,3 +744,19 @@ class Solution {
 }
 ✅ Time Complexity: O(n)
 ✅ Space Complexity: O(n)
+--------------------------------------------------------------------------------------------------------------------------------------
+24)search insert position :
+e.g : [1,2,3] t=3  return 2  , [1,2,4] t=3 return 2 , [1,2,3]  t=4 return 3  
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]>=target){
+                return i;
+            }
+        }
+        return nums.length;
+    }
+}
+t.c : O(n) ,s.c : (1)
+more optimal : O(n log n) , s.c :O(1) by using binary search 
+----------------------------------------------------------------------------------------------------------------------------------------
