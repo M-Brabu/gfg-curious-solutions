@@ -760,3 +760,25 @@ class Solution {
 t.c : O(n) ,s.c : (1)
 more optimal : O(n log n) , s.c :O(1) by using binary search 
 ----------------------------------------------------------------------------------------------------------------------------------------
+25)Heigth checker : 
+school needs students to stand in height wise : here 1,2,3 are height of students [1,2,4,3,5] but not standing in height wise but expected [1,2,3,4,5] on comapring both arr we know 2 pos 3 expected but 4 is present like wise totally 2 missorderd students heigtt
+
+class Solution {
+    public int heightChecker(int[] heights) {
+        ArrayList <Integer> expected = new ArrayList<>();
+        int n = heights.length;
+        for(int i=0;i<n;i++){
+            expected.add(heights[i]);
+        }
+        expected.sort(null);
+        int count = 0;
+        for(int j=0;j<n;j++){
+                 if(expected.get(j) != heights[j]){
+                    count++;
+                 }
+        }
+        return count;
+    }
+}
+t.c : O(n log n) ,s.c : O(n)
+--------------------------------------------------------------------------------------------------------------------------------
