@@ -836,3 +836,37 @@ class Solution {
 
 t.c : O(n) , s.c : O(n)
 ----------------------------------------------------------------------------------------------------------------------------------------
+27)intersection of two arrays 
+nums1 [1,2,3,4,5] , nums2 [2,3,4,6,7]  intersection : [2,3,4]
+brute:
+class Solution {
+    public int[] intersection(int[] nums1, int[] nums2) {
+        int n1 = nums1.length;
+        int n2 = nums2.length;
+        int k=0;
+        ArrayList <Integer> arr = new ArrayList<>();
+        for(int i=0;i<n1;i++){
+            for(int j=0;j<n2;j++){
+                   if(nums1[i]==nums2[j]){
+                    if(!arr.contains(nums1[i])){
+                    arr.add(nums1[i]);
+                    k++;
+                    }
+                   }
+               
+        }
+            int num[] = new int[arr.size()];
+            for(int m=0;m<arr.size();m++){
+                num[m]=arr.get(m);
+            }
+        return num;
+    }
+}
+t.c : O(n1 × n2 × min(n1,n2)) ,s.c :O(min(n1,n2))
+
+optimal :
+
+
+
+t.c : O() ,s.c :O()
+-------------------------------------------------------------------------------------------------------------------------------------
