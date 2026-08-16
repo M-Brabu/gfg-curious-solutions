@@ -91,6 +91,47 @@ class Solution {
     return third;    
     }
 }
+leetcode :
+[3,4,5,5,5] - 3 ,[1,2] - 2 co thier is no max third number so return the maximum number
+class Solution {
+    public int thirdMax(int[] nums) {
+        int n = nums.length;
+        long first = Long.MIN_VALUE;
+        long second = Long.MIN_VALUE;
+        long third = Long.MIN_VALUE;
+        if(n<3){
+            if(n==2){
+                return Math.max(nums[0],nums[1]);
+            }
+            else{
+                return nums[0]; 
+            }
+        }
+        for(int i=0;i<n;i++){
+            if(nums[i]==first ||nums[i]==second ||nums[i]==third){
+                    continue;
+            }
+            else{
+                if(nums[i]>first){
+                    third =  second;
+                    second = first;
+                    first = nums[i];
+                }
+                else if(nums[i]>second){
+                    third= second;
+                    second = nums[i];
+                }
+                else if(nums[i]>third){
+                    third = nums[i];
+                }
+            }
+        }
+        if(third == Long.MIN_VALUE){
+           return (int)first; 
+        }
+        return (int)third;
+    }
+}
 ------------------------------------------------------------------------------------------------------
 4)finding missing number in array :
 Examples:
