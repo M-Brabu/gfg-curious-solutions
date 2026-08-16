@@ -931,7 +931,28 @@ class Solution {
 
 
 t.c : O(n1 + n2) ,s.c :O(n1 + k)
--------------------------------------------------------------------------------------------------------------------------------------
-28)
-
---------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+28)Merge sorted array : [1,2,3,4]  , [2,5,6,7]  => [1,2,2,3,4,5,6,7]  
+leetcode :
+Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3                   :. here in nums1 [1,2,3] are actual elements [0,0,0] are just empty spaces inorder to accomadate the final answer so nums1 is intially given with m+n size
+Output: [1,2,2,3,5,6]
+Explanation: The arrays we are merging are [1,2,3] and [2,5,6].
+The result of the merge is [1,2,2,3,5,6] with the underlined elements coming from nums1.
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        ArrayList <Integer> arr = new ArrayList<>();
+        for(int j=0;j<m;j++){
+            arr.add(nums1[j]);
+        }
+        for(int num2 : nums2){
+            arr.add(num2);
+        }
+        Collections.sort(arr);
+        for(int i=0;i<arr.size();i++){
+            nums1[i] = arr.get(i);
+        }
+    }
+}
+                          Time	             Space
+Your ArrayList + Sort	O((m+n) log(m+n))	O(m+n)
+--------------------------------------------------------------------------------------------------------------------
