@@ -423,3 +423,54 @@ class Solution {
     }
 }
 t.c :O(n) ,s.c :O(1)
+----------------------------------------------------------------------------------------------------------------------------------------
+16)Find most Frequent vowel and consonant  3154
+You are given a string s consisting of lowercase English letters ('a' to 'z').
+Find the vowel (one of 'a', 'e', 'i', 'o', or 'u') with the maximum frequency.
+Find the consonant (all other letters excluding vowels) with the maximum frequency.
+Return the sum of the two frequencies.
+
+Note: If multiple vowels or consonants have the same maximum frequency, you may choose any one of them. If there are no vowels or no consonants in the string, consider their frequency as 0.
+The frequency of a letter x is the number of times it occurs in the string.
+ 
+Example 1:
+Input: s = "successes"
+Output: 6
+
+Explanation:
+The vowels are: 'u' (frequency 1), 'e' (frequency 2). The maximum frequency is 2.
+The consonants are: 's' (frequency 4), 'c' (frequency 2). The maximum frequency is 4.
+The output is 2 + 4 = 6.
+
+optimal but longer :
+class Solution {
+    public int maxFreqSum(String s) {
+        HashMap <Character,Integer> vowel = new HashMap<>();
+        HashMap <Character,Integer> consonant = new HashMap<>();
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)=='a' || s.charAt(i)=='e' || s.charAt(i)=='i' || s.charAt(i)=='o' || s.charAt(i)=='u'){
+                vowel.put(s.charAt(i),vowel.getOrDefault(s.charAt(i),0)+1);
+            }
+            else{
+                consonant.put(s.charAt(i),consonant.getOrDefault(s.charAt(i),0)+1);
+            }
+        }
+        int vowelFreq = 0;
+        int consonantFreq = 0;
+        for(HashMap.Entry <Character,Integer> entry : vowel.entrySet()){
+               if(entry.getValue()>vowelFreq){
+                vowelFreq=entry.getValue();
+               }
+        }
+        for(HashMap.Entry <Character,Integer> entry : consonant.entrySet()){
+            if(entry.getValue()>consonantFreq){
+                consonantFreq=entry.getValue();
+            }
+        }
+        return vowelFreq + consonantFreq ;
+    }
+}
+
+
+t.c : O(n) ,s.c :O(1)
+---------------------------------------------------------------------------------------------------------------------------------------
