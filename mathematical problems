@@ -205,3 +205,40 @@ class Solution {
     }
 }
 optimal : in loop use i*i<=n   reason i ≤ √n then squaring both sides gives: i² ≤ n insteed Math.sqrt(n);
+-----------------------------------------------------------------------------------------------------------------
+10)Check divisibilty by digit sum and product : 3622
+Input: n = 99
+Output: true
+Explanation:
+Since 99 is divisible by the sum (9 + 9 = 18) plus product (9 * 9 = 81) of its digits (total 99), the output is true.
+
+Example 2:
+Input: n = 23
+Output: false
+Explanation:
+Since 23 is not divisible by the sum (2 + 3 = 5) plus product (2 * 3 = 6) of its digits (total 11), the output is fals
+
+class Solution {
+    public boolean checkDivisibility(int n) {
+       int ns = n;
+       int np = n;
+       int sum = 0;
+       int product = 1;
+       while(ns>0){
+        sum = sum + (ns%10);
+        ns = ns/10;
+       }
+       while(np>0){
+        product=product*(np%10);
+        np = np/10;
+       }
+       if(n%(sum+product)==0){
+        return true;
+       } 
+       else{
+        return false;
+       }
+    }
+}
+t.c :O(log n) ,s.c :O(1)
+------------------------------------------------------------------------------------------------------------------------
