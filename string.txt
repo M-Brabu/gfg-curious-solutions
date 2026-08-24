@@ -474,3 +474,26 @@ class Solution {
 
 t.c : O(n) ,s.c :O(1)
 ---------------------------------------------------------------------------------------------------------------------------------------
+17)first unique character: 387
+Leetcode return 0 coz L is the first unique character , CodeCoke return 2 coz d is first  unique char aabb return -1 coz no unique char
+class Solution {
+    public int firstUniqChar(String s) {
+        HashMap <Character,Integer> map = new HashMap<>();
+        for(int i=0;i<s.length();i++){
+            map.put(s.charAt(i),map.getOrDefault(s.charAt(i),0)+1);
+        }
+        for(int j=0;j<s.length();j++){
+            if(map.get(s.charAt(j))==1){
+                     return j;
+            }
+        }
+       return -1;
+    }
+}
+t.c :O(n) , s.c : O(k)
+------------------------------------------------------------------------------------------------------------------------------------------
+18)
+
+
+t.c :O() ,s.c :O()
+-------------------------------------------------------------------------------------------------------------------------------------------
