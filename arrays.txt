@@ -1011,3 +1011,23 @@ class Solution {
 }
 t.c : O(n) , s.c :O(n)
 --------------------------------------------------------------------------------------------------------------------------------
+31)Find All Numbers Disappeared in array : 448 (optimal in time but not optimal is space)
+E.G : [1,4,2] return [3] , [1,2,4,5,7,8,9]  return [3,6]
+class Solution {
+    public List<Integer> findDisappearedNumbers(int[] nums) {
+        HashSet <Integer> set =  new HashSet<>();
+        ArrayList <Integer> arr = new ArrayList<>();
+        for(int i=0;i<nums.length;i++){
+            set.add(nums[i]);
+        }
+        for(int j=1;j<=nums.length;j++){
+              if(!set.contains(j)){
+                arr.add(j)
+              }
+        }
+        return arr;
+    }
+}
+T.C : O(n) , S.C : O(n)
+
+----------------------------------------------------------------------------------------------------------------------------------
