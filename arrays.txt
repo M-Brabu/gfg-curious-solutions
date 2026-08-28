@@ -1103,3 +1103,27 @@ class Solution {
 }
 t.c :O(n) , s.c :O(n) in worst case {9,9,9} -> {1,0,0,0}
 -------------------------------------------------------------------------------------------------------------------------------------------
+34)How many elements are smaller than current element:  1365
+e.g : nums {8,7,6,5} - >  ans {3,2,1,0}  coz their is 3 elements smaller than 8 in nums and 2 elements smaller than 7 etc .....
+brute :
+class Solution {
+    public int[] smallerNumbersThanCurrent(int[] nums) {
+     int n = nums.length;
+     int ans[] =new int[n];
+     int count;
+     int k=0;
+     for(int i=0;i<n;i++){
+        count =0;
+        for(int j=0;j<n;j++){
+            if(nums[i]>nums[j]){
+                count++;
+            }
+        }
+        ans[k]=count;
+        k++;
+     }
+     return ans;
+    }
+}
+t.c : O(n^2) , s.c : O(n)
+-----------------------------------------------------------------------------------------------------------------------------------
