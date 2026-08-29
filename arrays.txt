@@ -1158,6 +1158,7 @@ t.c : O(n),s.c:O(n)
 --------------------------------------------------------------------------------------------------------------------------------------------
 36)Sign of product of a array :
 [1,2,3] prod = 6 which is +ive so return 1 .[1,-2,3] prod =-6 which is -ive so return -ive . [1,0,3] prod =0 so return 0
+brute with product calclation:
 class Solution {
     public int arraySign(int[] nums) {
        double prod =1;
@@ -1173,6 +1174,21 @@ class Solution {
        else{
         return 0;
        }
+    }
+}
+optimal without product calculation
+class Solution {
+    public int arraySign(int[] nums) {
+        int sign = 1;
+        for(int i=0;i<nums.length;i++){
+           if(nums[i]==0){
+            return 0;
+           }
+           else if(nums[i]<0){
+              sign = -(sign);
+           }
+        }
+        return sign;
     }
 }
 t.c : O(n) ,s.c : O(1)
