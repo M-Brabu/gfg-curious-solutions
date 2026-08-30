@@ -548,5 +548,25 @@ class Solution {
 
 t.c : O(n) , s.c :O(1)
 ----------------------------------------------------------------------------------------------------------------------------------------
-20)
+20)Panagram : 1832
+panagram is an word which contains all english letters at least once : "the quick brown fox jump over the lazy dog"
+optimal:
+class Solution {
+    public boolean checkIfPangram(String sentence) {
+     int pan [] = new int[26];
+     for(int i=0;i<sentence.length();i++){
+           int index =sentence.charAt(i)-'a';
+           pan[index] = 1;
+     }
+     for(int j=0;j<26;j++){
+        if(pan[j] == 0){
+            return false;
+        }
+     }   
+     return true;
+    }
+}
+t.c :O(n) , s.c :O(1)
 ----------------------------------------------------------------------------------------------------------------------------------------
+21)
+-----------------------------------------------------------------------------------------------------------------------------------------
