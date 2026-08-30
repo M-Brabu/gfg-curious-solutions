@@ -528,3 +528,25 @@ class Solution {
 }
 t.c :O(n) ,s.c :O(n)
 -------------------------------------------------------------------------------------------------------------------------------------------
+19) Find difference between strings: 389 
+t = "abcde" , t= "abcd" s-t = 'e' , t="dfgh" s="dfghj" s-t = 'j'   
+t.length = t.length +1 
+optimal :
+class Solution {
+    public char findTheDifference(String s, String t) {
+     int ss = 0;
+     int ts = 0;
+     for(int i=0;i<s.length();i++){
+        ss =ss+ s.charAt(i);  // charAt when assigned to int var then java will return the ascii of char at ith index to var 'a' then retuen 97
+     } 
+     for(int j=0;j<t.length();j++){
+        ts = ts+t.charAt(j);
+     }   
+     return (char)(ts-ss);
+    }
+}
+
+t.c : O(n) , s.c :O(1)
+----------------------------------------------------------------------------------------------------------------------------------------
+20)
+----------------------------------------------------------------------------------------------------------------------------------------
