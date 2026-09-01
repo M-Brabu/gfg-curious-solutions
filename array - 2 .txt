@@ -1,1 +1,24 @@
+38) Find Numbers with Even Number of digits 
+[432,5678,123,3456,67] return 3 because [5678,3456,67] are numbers with even number of digits 
 
+class Solution {
+    public int findNumbers(int[] nums) {
+        int n = nums.length;
+        int num =0;
+        for(int i=0;i<n;i++){
+            int digit = nums[i];
+            int count =0;
+            while(digit>0){
+               digit =digit/10;
+               count+a+;
+            }
+            if(count%2 == 0){
+                 num++;
+            }
+        }
+        return num;
+    }
+}
+
+t.c : O(n x d) ,s.c : O(1)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
