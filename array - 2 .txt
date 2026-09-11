@@ -40,5 +40,46 @@ class Solution {
 }
 t.c :O(n),s.c:O(n)
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-40) 
+40) Difference Between Element Sum and digit sum of array : 2535
+
+You are given a positive integer array nums.
+The element sum is the sum of all the elements in nums.
+The digit sum is the sum of all the digits (not necessarily distinct) that appear in nums.
+Return the absolute difference between the element sum and digit sum of nums.
+Note that the absolute difference between two integers x and y is defined as |x - y|.
+
+Example 1:
+Input: nums = [1,15,6,3]
+Output: 9
+Explanation: 
+The element sum of nums is 1 + 15 + 6 + 3 = 25.
+The digit sum of nums is 1 + 1 + 5 + 6 + 3 = 16.
+The absolute difference between the element sum and digit sum is |25 - 16| = 9.
+
+class Solution {
+    public int differenceOfSum(int[] nums) {
+     int n = nums.length;
+     int elesum =0;
+     int digisum =0;
+     for(int i=0;i<n;i++){
+              elesum = elesum + nums[i];
+     }   
+     for(int j=0;j<n;j++){
+        if(nums[j]>9){
+            int num = nums[j];
+            while(num>0){
+            digisum = digisum + num%10;
+            num = num/10;
+            }
+        }
+        else{
+       digisum = digisum + nums[j];
+        }
+    }
+    return Math.abs(digisum-elesum);
+}
+}
+t.c : O(n x d) d is maximum digit e.g 234 has 3 digits , s.c :O(1)
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+41)
+___________________________________________________________________________________________________________________________________________________________________________________
