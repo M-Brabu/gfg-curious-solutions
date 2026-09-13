@@ -137,5 +137,32 @@ class Solution {
 }
 t.c:O(n),s.c:O(n)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
-43)
+43)intersection of two arrays II : 350
+
+nums1[1,2,2,1] , nums2[2,2] intersection :[2,2]
+class Solution {
+    public int[] intersect(int[] nums1, int[] nums2) {
+        HashMap <Integer,Integer> map1 =new HashMap<>();
+        ArrayList <Integer> arr = new ArrayList<>();
+        int n1 = nums1.length;
+        int n2 = nums2.length;
+        for(int i=0;i<n1;i++){
+              map1.put(nums1[i],map1.getOrDefault(nums1[i],0)+1);
+        }
+        for(int j=0;j<nums2.length;j++){
+              if(map1.containsKey(nums2[j])  &&    map1.get(nums2[j])>0 ){
+                  map1.put(nums2[j],map1.get(nums2[j])-1);
+                  arr.add(nums2[j]);
+              }
+        }
+        int res [] = new int[arr.size()];
+        for(int m=0;m<arr.size();m++){
+                res[m]=arr.get(m);
+        }
+        return res;
+    }
+}
+t.c :O(n1+n2),s.c:O(n1+k)
 ___________________________________________________________________________________________________________________________________________________________
+44)
+___________________________________________________________________________________________________________________________________________________________s
