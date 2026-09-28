@@ -211,6 +211,41 @@ class Solution {
 t.c : O(n^2) .s.c :O(1)
 
 ___________________________________________________________________________________________________________________________________________________________
-45)
+45)separate the digits in an array : 2553
+Input: nums = [13,25,83,77]
+Output: [1,3,2,5,8,3,7,7]
+solution:
+class Solution {
+    public int[] separateDigits(int[] nums) {
+        int n = nums.length;
+        ArrayList <Integer> arr =  new ArrayList<>(); 
+        for(int i=0;i<n;i++){
+            if(nums[i]<9){
+             arr.add(nums[i]);
+            }
+            else{
+                int num = nums[i];
+                ArrayList <Integer> rev = new ArrayList<>(); 
+                while(num>0){
+                    rev.add(num%10);
+                    num = num/10;
+                }
+                int revlen = rev.size();
+                while(revlen>0){
+                    arr.add(rev.get(revlen-1));
+                    revlen--;
+                }
+            }    
+        }
+            int result []= new int[arr.size()];
+            for(int j=0;j<arr.size();j++){
+                result[j] = arr.get(j);
+            }
+            return result;
+    }
+}
+t.c : O(n)
+s.c : O(n)
 ___________________________________________________________________________________________________________________________________________________________
-
+46) 
+__________________________________________________________________________________________________________________________________________________________
