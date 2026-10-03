@@ -242,3 +242,45 @@ class Solution {
 }
 t.c :O(log n) ,s.c :O(1)
 ------------------------------------------------------------------------------------------------------------------------
+11) Add digits: 258
+
+Input: num = 38
+Output: 2
+
+Explanation: The process is
+38 --> 3 + 8 --> 11
+11 --> 1 + 1 --> 2 
+Since 2 has only one digit, return it.
+
+Example 2:
+Input: num = 0
+Output: 0
+
+class Solution {
+    public int addDigits(int num) {
+        while(true){
+        if(num <= 9){
+            return num;
+        }
+        else{
+           num = summer(num); 
+          }
+        }
+    }
+    int summer(int num){
+        ArrayList <Integer> arr =  new ArrayList<>();
+        while(num>0){
+            arr.add(num %10);
+            num = num  / 10;
+        }
+        int sum = 0;
+        for(int i = 0 ; i < arr.size();i++){
+            sum = sum + arr.get(i);
+        }
+        return sum;
+    }
+}
+t.c : O(log n), s.c :O(log n)
+___________________________________________________________________________________________________________________
+12)
+___________________________________________________________________________________________________________________
