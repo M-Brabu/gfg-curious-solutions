@@ -312,6 +312,23 @@ class Solution {
     }
 }
 t.c: O(log num) , s.c : O(log num)
+
+optimal : 
+class Solution {
+    public int countDigits(int num) {
+        int result = 0;
+        int clone = num;
+        while(clone>0){
+            int last =  clone%10;
+            clone = clone / 10;
+            if(num % last == 0){
+                result++;
+            }
+        }
+        return result;
+    }
+}
+t.c: O(log num) , s.c : O(1)
 ___________________________________________________________________________________________________________________________
 13)
 
