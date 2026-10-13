@@ -568,7 +568,7 @@ class Solution {
 }
 t.c :O(n) , s.c :O(1)
 --------------------------------------------------------------------------------------------------------------------
-21)Reverse Degree of a String
+21)Reverse Degree of a String : 
 class Solution {
     public int reverseDegree(String s) {
         int result = 0;
@@ -600,5 +600,18 @@ class Solution {
 }
 t.c : O(n) , s.c : O(1)
 -------------------------------------------------------------------------------------------------------------------
-22)
+22)Score of a String : 3110 
+class Solution {
+    public int scoreOfString(String s) {
+        int result = 0;
+        for(int i=0;i<s.length()-1;i++){
+            int num = Math.abs(s.charAt(i) - s.charAt(i+1));
+            result = result + num ;
+        }
+        return result;
+    }
+}
+t.c : O(n) , s.c : O(1)
+___________________________________________________________________________________________________________________
+23)
 ___________________________________________________________________________________________________________________
