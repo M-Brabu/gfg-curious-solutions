@@ -568,7 +568,16 @@ class Solution {
 }
 t.c :O(n) , s.c :O(1)
 --------------------------------------------------------------------------------------------------------------------
-21)Reverse Degree of a String : 
+21)Reverse Degree of a String : 3498
+Example 1:
+Input: s = "abc"
+Output: 148
+Explanation:
+Letter	Index in Reversed Alphabet	Index in String	Product
+'a'	26	1	26
+'b'	25	2	50
+'c'	24	3	72
+26 +  50 +  72 = 148
 class Solution {
     public int reverseDegree(String s) {
         int result = 0;
@@ -601,6 +610,10 @@ class Solution {
 t.c : O(n) , s.c : O(1)
 -------------------------------------------------------------------------------------------------------------------
 22)Score of a String : 3110 
+Input: s = "hello"
+Output: 1
+Explanation:
+The ASCII values of the characters in s are: 'h' = 104, 'e' = 101, 'l' = 108, 'o' = 111. So, the score of s would be |104 - 101| + |101 - 108| + |108 - 108| + |108 - 111| = 3 + 7 + 0 + 3 = 13.
 class Solution {
     public int scoreOfString(String s) {
         int result = 0;
