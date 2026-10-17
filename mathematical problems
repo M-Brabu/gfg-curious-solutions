@@ -357,5 +357,30 @@ class Solution {
 }
 t.c: O(1) , s.c : O(1)
 ____________________________________________________________________________________________________________________________
-14)
+14)2806. Account Balance After Rounded Purchase
+Example 1:
+Input: purchaseAmount = 9
+Output: 90
+Explanation:
+The nearest multiple of 10 to 9 is 10. So your account balance becomes 100 - 10 = 90.
+
+Example 2:
+Input: purchaseAmount = 10
+Output: 80
+Explanation:
+The nearest multiple of 10 to 15 is 20. So your account balance becomes 100 - 20 = 80.
+
+Example 3:
+Input: purchaseAmount = 10
+Output: 90
+Explanation:
+10 is a multiple of 10 itself. So your account balance becomes 100 - 10 = 90.
+
+class Solution {
+    public int accountBalanceAfterPurchase(int purchaseAmount) {
+        int roundedAmount = Math.round(purchaseAmount / 10f) * 10;
+        return 100 - roundedAmount;
+        }
+}
+t.c: O(1) , s.c : O(1)
 ____________________________________________________________________________________________________________________________
