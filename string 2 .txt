@@ -125,5 +125,47 @@ The outer loop iterates through all \(N\) words.
 The inner loop checks up to \(L\) characters per word.
 T.C: O (n x L) , S.C : O(n)  
 ___________________________________________________________________________________________________________________________________
-29)
+29)Count the Number of Consistent Strings : 1684
+
+Example 1:
+Input: allowed = "ab", words = ["ad","bd","aaab","baa","badab"]
+Output: 2
+Explanation: Strings "aaab" and "baa" are consistent since they only contain characters 'a' and 'b'.
+
+Example 2:
+Input: allowed = "abc", words = ["a","b","c","ab","ac","bc","abc"]
+Output: 7
+Explanation: All strings are consistent.
+
+Example 3:
+Input: allowed = "cad", words = ["cc","acd","b","ba","bac","bad","ac","d"]
+Output: 4
+Explanation: Strings "cc", "acd", "ac", and "d" are consistent.
+
+class Solution {
+    public int countConsistentStrings(String allowed, String[] words) {
+        int count = 0;
+        HashSet <Character> set = new HashSet<>();
+        for(int i=0;i<allowed.length();i++){
+           set.add(allowed.charAt(i));
+        }
+        for(String k : words){
+            int flag = 1;
+            for(int j=0 ;j<k.length();j++){
+                   if(!set.contains(k.charAt(j))){
+                         flag = 0;
+                   }
+            }
+            count = count + flag;
+        }
+        return count;
+    }
+}
+
+T.C: O (A + N+ L) , S.C : O(A)  
+A = length of allowed
+N = number of strings in words
+L = total number of characters across all strings in words
 ____________________________________________________________________________________________________________________________________
+30)
+___________________________________________________________________________________________________________________________________
