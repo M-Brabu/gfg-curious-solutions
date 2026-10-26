@@ -1,4 +1,4 @@
-50)  minimum number of moves needed to seat everyone : 2037   case 2 is this question's case
+51)  minimum number of moves needed to seat everyone : 2037   case 2 is this question's case
 
 Example where seats = [3,1,5] and students = [2,7,4].
 Here, we have 3 seats and 3 students. The seats are at positions 3, 1, and 5, and the students are at positions 2, 7, and 4.
