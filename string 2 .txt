@@ -167,5 +167,70 @@ A = length of allowed
 N = number of strings in words
 L = total number of characters across all strings in words
 ____________________________________________________________________________________________________________________________________
-30)
+30)Check if Two Chessboard Squares Have the Same Color 3274
+You are given two strings, coordinate1 and coordinate2, representing the coordinates of a square on an 8 x 8 chessboard. use chess board as reference 
+Example 1:
+Input: coordinate1 = "a1", coordinate2 = "c3"
+Output: true
+Explanation:
+Both squares are black.
+
+Example 2:
+Input: coordinate1 = "a1", coordinate2 = "h3"
+Output: false
+Explanation:
+Square "a1" is black and "h3" is white
+ 
+Constraints:
+coordinate1.length == coordinate2.length == 2
+'a' <= coordinate1[0], coordinate2[0] <= 'h'
+'1' <= coordinate1[1], coordinate2[1] <= '8'
+
+class Solution {
+    public boolean checkTwoChessboards(String coordinate1, String coordinate2) {
+        String c1 = "Black";
+        String c2 = "Black";
+        if(coordinate1.charAt(0)=='a' || coordinate1.charAt(0)=='c' || coordinate1.charAt(0)=='e' ||coordinate1.charAt(0)=='g'){
+             if(coordinate1.charAt(1)=='1' || coordinate1.charAt(1)=='3' || coordinate1.charAt(1)=='5' || coordinate1.charAt(1)=='7'){
+                 c1="Black";
+             }
+             else{
+                c1 = "White";
+             }
+          
+        }
+        else{
+            if(coordinate1.charAt(1)=='1' || coordinate1.charAt(1)=='3' || coordinate1.charAt(1)=='5' || coordinate1.charAt(1)=='7'){
+                 c1="White";
+             }
+             else{
+                c1="Black";
+             }
+        }
+        if(coordinate2.charAt(0)=='a' || coordinate2.charAt(0)=='c' || coordinate2.charAt(0)=='e' ||coordinate2.charAt(0)=='g'){
+             if(coordinate2.charAt(1)=='1' || coordinate2.charAt(1)=='3' || coordinate2.charAt(1)=='5' || coordinate2.charAt(1)=='7'){
+                 c2="Black";
+             }
+             else{
+                c2="White";
+             }
+          
+        }
+        else{
+            if(coordinate2.charAt(1)=='1' || coordinate2.charAt(1)=='3' || coordinate2.charAt(1)=='5' || coordinate2.charAt(1)=='7'){
+                 c2="White";
+             }
+             else{
+                c2="Black";
+             }
+        }
+        if((c1 == "Black" && c2 == "Black") || (c1 == "White" && c2 == "White")){
+            return true;
+        }
+        return false;
+    }
+}
+T.C:O(1) , S.C :O(1)
 ___________________________________________________________________________________________________________________________________
+32)
+____________________________________________________________________________________________________________________________________
