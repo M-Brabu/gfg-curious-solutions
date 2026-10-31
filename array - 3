@@ -41,3 +41,37 @@ class Solution {
 }
 t.c : O(n log n) , s.c : O(log n)
 _____________________________________________________________________________________________________________
+52) Digit Frequency Score : 3945
+
+Example 1:
+Input: n = 122
+Output: 5
+
+Explanation:
+The digit 1 appears 1 time, contributing 1 * 1 = 1.
+The digit 2 appears 2 times, contributing 2 * 2 = 4.
+Thus, the score of n is 1 + 4 = 5.
+
+class Solution {
+    public int digitFrequencyScore(int n) {
+     int score = 0; 
+     HashMap <Integer,Integer> map = new HashMap<>();
+     int cpy = n;
+     while(cpy>0){
+        int digit = cpy % 10;
+        map.put(digit,map.getOrDefault(digit,0)+1);
+        cpy = cpy/10;   
+     }
+     int ans =0;
+     for(Map.Entry <Integer,Integer> entry : map.entrySet()){
+              int value =  entry.getKey() * entry.getValue();
+              ans = ans + value;
+     }
+     return ans;
+     }
+}
+
+T.C : O(log n) , S.C : O(1)
+_________________________________________________________________________________________________________________________________-
+53)
+_____________________________________________________________________________________________________________________________________
